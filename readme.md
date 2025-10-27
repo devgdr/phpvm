@@ -29,4 +29,4 @@ go build -o phpvm
 
 ## 🎥 مشاهده ویدیو
 
-[![Watch the video]](phpvm.mp4)
+[![Watch the video](thumbnail.png)](phpvm.mp4)

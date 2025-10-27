@@ -1,0 +1,21 @@
+services:
+  php:
+    container_name: ${PROJECT_NAME}
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID}
+        GID: ${GID}
+        PHP_BASE: ${PHP_BASE}
+    image: "${PROJECT_NAME}_${PHP_BASE}"
+    ports:
+      - "2222:22"
+      - "8007:8000"
+      - "9003:9003"
+      - "9000:9000"
+    volumes:
+      - ./App:/var/www/html
+      - ./docker/php/logs/xdebug:/var/log/xdebug
+    extra_hosts:
+      - host.docker.internal:host-gateway

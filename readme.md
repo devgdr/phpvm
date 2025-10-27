@@ -29,13 +29,4 @@ go build -o phpvm
 
 ## 🎥 مشاهده ویدیو
 
-
-<p align="center">
-  <strong>برای مشاهده توضیحات، روی تصویر زیر کلیک کنید:</strong>
-  <br>
-  <a href="phpvm.mp4" title="Click to watch video">
-    <img src="thumbnail.png" alt="PHPVM Video Thumbnail" style="max-width:800px; border-radius:10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-  </a>
-</p>
-
-> 📌 ویدیو مربوط به راه‌اندازی و استفاده از PHPVM است.
+[![Watch the video]](phpvm.mp4)

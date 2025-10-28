@@ -19,10 +19,11 @@ jobs:
         with:
           go-version: '1.21'
 
+      - name: Rename env.example to .env
+        run: mv env.example .env
+
       - name: Build PHPVM
-        run: |
-          set -ex
-          go build -o phpvm
+        run: go build -o phpvm
 
       - name: Upload PHPVM binary
         uses: actions/upload-artifact@v4

@@ -17,7 +17,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.21'  # نسخه Go دلخواهت
+          go-version: '1.21'
 
       - name: Build PHPVM
         run: |
@@ -25,6 +25,7 @@ jobs:
           go build -o phpvm
 
       - name: Upload PHPVM binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: phpvm
+          path: phpvm

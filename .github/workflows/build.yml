@@ -28,6 +28,9 @@ jobs:
     - name: Install NFPM
       run: go install github.com/goreleaser/nfpm/v2/cmd/nfpm@latest
 
+    - name: Prepare for NFPM
+      run: cp bin/phpvm-linux-amd64 build/linux/
+
     - name: Build Linux Packages
       run: |
         export PATH=$PATH:$(go env GOPATH)/bin

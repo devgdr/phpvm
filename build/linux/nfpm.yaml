@@ -11,7 +11,7 @@ homepage: "https://github.com/yourusername/phpvm"
 license: "MIT"
 
 contents:
-  - src: ../../bin/phpvm-linux-amd64
+  - src: ./phpvm-linux-amd64
     dst: /usr/local/bin/phpvm
     type: file
     file_info:

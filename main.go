@@ -14,10 +14,10 @@ func main() {
 		log.Fatalf("Error resolving project path: %v", err)
 	}
 
-	// کپی template ها
+
 	bootstrap.CopyTheTemplate(projectPath)
 
-	// ویرایش فایل .env
+
 	bootstrap.UpdateEnvFile(projectPath, projectName, phpVersion)
 	if bootstrap.CheckDockerInstalled() {
 		bootstrap.ShowUsageInstructions()

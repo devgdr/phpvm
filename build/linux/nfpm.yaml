@@ -1,0 +1,18 @@
+name: "phpvm"
+arch: "amd64"
+platform: "linux"
+version: "1.0.0"
+section: "default"
+priority: "extra"
+maintainer: "Mehdi <mehdi@example.com>"
+description: "PHPVM - Dockerized PHP Environment CLI"
+vendor: "Mehdi"
+homepage: "https://github.com/yourusername/phpvm"
+license: "MIT"
+
+contents:
+  - src: ../../bin/phpvm-linux-amd64
+    dst: /usr/local/bin/phpvm
+    type: file
+    file_info:
+      mode: "0755"

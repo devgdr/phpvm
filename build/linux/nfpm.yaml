@@ -15,4 +15,4 @@ contents:
     dst: /usr/local/bin/phpvm
     type: file
     file_info:
-      mode: "0755"
+      mode: 0o755

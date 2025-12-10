@@ -61,9 +61,6 @@ RUN groupadd -g $GID developer && \
     chown -R developer:developer /home/developer && \
     usermod -aG sudo developer
 
-# تنظیم password برای developer
-RUN echo 'developer:dev123456' | chpasswd
-
 
 RUN echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 

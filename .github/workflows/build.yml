@@ -21,24 +21,27 @@ jobs:
     - name: Build Linux
       run: GOOS=linux GOARCH=amd64 go build -o bin/phpvm-linux-amd64 .
 
-    - name: Build Windows
-      run: GOOS=windows GOARCH=amd64 go build -o bin/phpvm-windows-amd64.exe .
+    - name: Build PC Executables
+      run: |
+        GOOS=windows GOARCH=amd64 go build -o bin/phpvm-windows-amd64.exe .
+        GOOS=linux GOARCH=amd64 go build -o bin/phpvm-linux-amd64 .
 
     - name: Build Windows Installer (Inno Setup)
-      uses: Minionguyjosh/inno-setup-action@v1.2.2
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
       with:
         path: build/windows/installer.iss
 
     - name: Install NFPM
-      uses: goreleaser/nfpm-action@v2
-      with:
-        version: latest
+      run: go install github.com/goreleaser/nfpm/v2/cmd/nfpm@latest
 
     - name: Build Linux Packages
-      run: nfpm pkg --packager deb --target bin/ --config build/linux/nfpm.yaml && nfpm pkg --packager rpm --target bin/ --config build/linux/nfpm.yaml
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        nfpm pkg --packager deb --target bin/ --config build/linux/nfpm.yaml
+        nfpm pkg --packager rpm --target bin/ --config build/linux/nfpm.yaml
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: phpvm-installers
         path: |

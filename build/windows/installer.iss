@@ -1,6 +1,6 @@
 [Setup]
 AppName=PHPVM
-AppVersion=1.0.1
+AppVersion=1.0.3
 ; A random GUID to identify this app
 AppId={{D4166E7C-1B05-4B80-9285-802F3A79E234}
 DefaultDirName={autopf}\PHPVM

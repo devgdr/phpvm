@@ -28,7 +28,7 @@
 ### 🐧 Linux (Debian/Ubuntu)
 ```bash
 # فایل .deb را دانلود و نصب کنید
-sudo dpkg -i phpvm_1.0.1_amd64.deb
+sudo dpkg -i phpvm_1.0.3_amd64.deb
 
 # اجرا
 phpvm
